@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/cc.css' %}" />
+    <img src="{% static 'image/ps.jpg' %}" width="50" height="50" />
+    <body style="background-color: fff"></body>
+    <style></style>
+  </head>
+  <body>
+    <h2 style="font-family: verdana" style="font-size: 250%">
+      Service We Providing
+    </h2>
+    <p style="font-family: courier" style="font-size: 150%">
+      We are not just a software solution;
+    </p>
+    <p style="font-family: courier" style="font-size: 150%">
+      we are your partners in success. We work collaboratively with you,
+      offering ongoing support and guidance throughout our engagement.
+    </p>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="{% static 'image/dm.webp'" width="1000" height="500" />
+        <div class="text">Digital Marketing</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="{% static 'image/ip.jpg' %}" width="1000" height="500" />
+        <div class="text">Projects and Internship</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="{% static 'image/add.png' %}" width="1000" height="500" />
+        <div class="text">Application Development</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="{% static 'image/wd.jpg' %}" width="1000" height="500" />
+        <div class="text">WebSite Development</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="{% static 'image/ia.jpg' %}" width="1000" height="500" />
+        <div class="text">IoT Application</div>
+      </div>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <script src="{% static 'js/cc.js' %}"></script>
+  </body>
+</html>

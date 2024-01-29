@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <img src="{% static 'image/ps.jpg' %}" width="50" height="50">  
+  <title> Pinesphere: Digital Solutions, IT Services & Consulting</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+    <title>Certificate Generation</title>
+</head>
+<body>
+    <header id="header">
+        <a href="#" class="logo">Pinesphere: Digital Solutions</a>
+        <ul>
+            <li><a href="{% url 'products' %}" class="active">Our Products</a></li>
+            <li><a href="{% url 'services' %}">Our Services</a></li>
+			<li><a href="{% url 'about' %}">Info</a></li>
+			<li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </header>
+    
+    <Section>
+        <h2 id="text"><span>It's time for a new</span><br>Beginning</h2>
+        
+        <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png" id="bird1">
+        <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png" id="bird2">
+        <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png" id="forest">
+        
+        
+        
+        <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png" id="rocks">
+        <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png" id="water">
+    </Section>
+    
+    <div class="sec">
+        <h2>Empowering Your Success through Reliable IT Services</h2>
+        <p>Pinesphere is at the forefront of technological advancements, offering advanced products, innovative services,
+		and cutting-edge workforce solutions. Our comprehensive range of offerings harnesses 
+        the power of data convergence, technology integration, and groundbreaking innovation to unlock unlimited possibilities.</p>
+	</div>
+<div class="sec">
+        <h2>Empowering Our Customers with the Best</h2>
+        <p>Our unwavering goal is to provide our esteemed customers with nothing short of excellence.
+		With our cutting-edge technical solutions and meticulous attention to detail, we strive to surpass expectations and deliver the absolute best. 
+		Contact us today to experience the pinnacle of technological innovation.</p>
+</div>
+<div class="sec">
+<h2>About Us</h2>
+<p>"Software start up with intense passion and strong appetite to deliver the best software solutions and services to the customers. Strong leadership team with extensive experience in software industry. Solid understanding of business processes, trends and best practices in the industry"</p>
+<br><br><br><br>
+<p><a href="https://www.pinesphere.com/">Click TO Refer More</a><br></p>
+<p>Industry :Software Development<br>
+Company size:11-50 employees<br>
+Headquarters:Coimbatore , Tamilnadu<br>
+Type:Privately Held<br>
+Founded:2018</p>
+</div>
+
+<div>
+    
+    
+    
+    <!-- partial -->
+  <script  src="{% static 'js/index.js' %}"></script>
+
+</body>
+<!-- partial -->
+  <script  src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>
