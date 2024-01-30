@@ -90,3 +90,17 @@ font-weight: bold;
 .signup label:hover{
   text-decoration: underline;
 }
+
+.button {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for better appearance */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  font-size: 16px; /* Font size */
+}
+
+.button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  }
