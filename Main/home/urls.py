@@ -8,6 +8,7 @@ urlpatterns = [
     path('about/', views.about_page, name='about'),
     path('products/', views.products_page, name='products'),
     path('services/', views.services_page, name='services'),
+    
 
     # Include Django's authentication URLs
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),

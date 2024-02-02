@@ -39,6 +39,10 @@
 
           <a href="{% url 'password_reset' %}">Forgot password?</a> <br /><br />
           <center><button type="submit" class="button">Login</button></center>
+          <br /><br />
+          {% if error_message %}
+          <p class="error">{{ error_message }}</p>
+          {% endif %}
         </form>
       </div>
     </div>
