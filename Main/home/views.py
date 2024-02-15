@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth import views as auth_views
+from django.contrib.auth import login,authenticate
 
 # Create your views here.
 def home_page(request):
     return render(request,'index.html',{})
-
-def login_page(request):
-    return render(request,'login.html',{})
 
 def about_page(request):
     return render(request,'about.html',{})
