@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE' : 'django.db.backends.postgresql',
         'NAME' : 'certificateGenerator',
         'USER' : 'postgres',
-        'PASSWORD' : '1214',
+        'PASSWORD' : '2024',
         'HOST' : 'localhost',
         'PORT' : '5432'
     }
