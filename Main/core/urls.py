@@ -23,6 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('dashboard.urls')),
     path('',include('users.urls')),
+    path('',include('ExcelDataIntegration.urls')),
+    # path('',include('generator')),
+    # path('',include('list.urls'))
+
 ]
 
 if settings.DEBUG:

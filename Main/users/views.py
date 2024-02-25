@@ -3,6 +3,10 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth import login,authenticate
 
 
+def home_page(request):
+    return render(request,'index.html',{})
+
+
 # Create your views here.
 def login_page(request):
     if request.method=='POST':
@@ -15,7 +19,7 @@ def login_page(request):
 
         if user is not None:
             login(request,user) #redirecting the user after successful login
-            return redirect('home')
+            return render(request,'dashboard.html',{})
             
         else:
             #if controll is here then Authentication is failed 
