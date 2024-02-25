@@ -1,5 +1,4 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from openpyxl import load_workbook
 from .models import IncompleteGeneration
 
@@ -16,7 +15,3 @@ def import_from_excel(request):
         return render(request, 'dashboard.html')
 
     return render(request, 'import_form.html')
-=======
-
-# Create your views here.
->>>>>>> ad1d21cf3999f0bc55e34d96f4501ba65aae2baf
