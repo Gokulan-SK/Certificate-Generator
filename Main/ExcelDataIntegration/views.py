@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from openpyxl import load_workbook
 from .models import IncompleteGeneration
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def import_from_excel(request):
     if request.method=='POST':
         excel_file=request.FILES['excel_file']

@@ -8,7 +8,6 @@ from . import views
 @login_required
 def dashboard(request):
     return render(request,'dashboard.html',{})
-<<<<<<< HEAD
 
 @login_required
 def generate_list(request):
@@ -17,7 +16,5 @@ def generate_list(request):
 @login_required
 def certificate_template(request):
     return render(request, 'certificate-template.html', {})
-=======
->>>>>>> ad1d21cf3999f0bc55e34d96f4501ba65aae2baf
 
 
