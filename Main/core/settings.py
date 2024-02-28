@@ -89,9 +89,9 @@ DATABASES = {
     #postgreSQL connection
     'default' : {
         'ENGINE' : 'django.db.backends.postgresql',
-        'NAME' : 'certificateGenerator',
+        'NAME' : 'certificate_details',
         'USER' : 'postgres',
-        'PASSWORD' : '2024',
+        'PASSWORD' : '164',
         'HOST' : 'localhost',
         'PORT' : '5432'
     }

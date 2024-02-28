@@ -6,3 +6,6 @@ class IncompleteGeneration(models.Model):
     course=models.CharField(max_length=100)
     duration=models.CharField(max_length=30)
     email=models.EmailField()
+    def __str__(self):
+        return self.name+' '+self.course+' '+self.duration+' '+self.email
+

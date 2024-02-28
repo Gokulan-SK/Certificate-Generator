@@ -22,10 +22,17 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('dashboard.urls')),
+
+    path('',include('ExcelDataIntegration.urls')),
+    path('',include('generator.urls')),
+    path('',include('list.urls')),
+    path('',include('users.urls'))
+
     path('',include('users.urls')),
     path('',include('ExcelDataIntegration.urls')),
     # path('',include('generator')),
     # path('',include('list.urls'))
+
 
 ]
 
