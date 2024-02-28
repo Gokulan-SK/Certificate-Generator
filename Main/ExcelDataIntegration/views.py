@@ -5,7 +5,12 @@ from django.contrib.auth.decorators import login_required
 
 
 
+
 def import_form(request):
+
+@login_required
+def import_from_excel(request):
+
     if request.method=='POST':
         excel_file=request.FILES['excel_file']
         wb=load_workbook(excel_file)

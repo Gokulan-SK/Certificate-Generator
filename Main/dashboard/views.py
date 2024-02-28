@@ -10,4 +10,12 @@ def dashboard(request):
     return render(request,'dashboard.html',{'list': list})
 
 
+@login_required
+def generate_list(request):
+    return render(request, 'generate-list.html',{})
+
+@login_required
+def certificate_template(request):
+    return render(request, 'certificate-template.html', {})
+
 
