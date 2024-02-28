@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <a href="{% url 'dashboard' %}"
+      ><img
+        class="top-left-image"
+        src="{% static 'image/ps.jpg' %}"
+        alt="Your Image"
+      />
+    </a>
+    <title>Semster Subjects</title>
+    <link rel="stylesheet" href="{% static 'css/table.css' %}" />
+  </head>
+  <body>
+    <video autoplay loop muted plays-inline class="background-video">
+      <source src="{% static 'image/bgvideo.mp4' %}" type="video/mp4" />
+    </video>
+    <center>
+      <caption style="font-weight: bold">
+        
+      </caption>
+    </center>
+
+    <table border="1">
+      <tr>
+        <th>student Name</th>
+        <th>Course Name</th>
+        <th>Duration</th>
+        <th>Mail ID</th>
+        <th></th>
+      </tr>
+      {%for item in list %}
+      <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.course}}</td>
+        <td>{{item.duration}}</td>
+        <td>{{item.email}}</td>
+        <td><a href="{% url 'certificate' %}" class="button">Click To Generate</a></td>
+      </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>

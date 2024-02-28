@@ -1,373 +1,601 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>DASHBOARDS</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
 
-    <!--link rel="stylesheet" href="C:\Users\Chara\OneDrive\Desktop\t.css"-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'image/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'image/ps.jpg' %}">
+  <title>
+    Pinesphere solutions
+  </title>
+  <!--     Fonts and icons     -->
+  <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" /-->
+  <!-- Nucleo Icons -->
+  <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/nucleo-svg.css'%}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{% static 'css/nucleo-svg.css' %}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{% static 'css/argon-dashboard.css' %}" rel="stylesheet" />
+</head>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Raleway"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <style>
-      html,
-      body,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: "Raleway", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="w3-light-grey">
-    <!-- Top container -->
-    <div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
-      <button
-        class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
-        onclick="w3_open();"
-      >
-        <i class="fa fa-bars"></i>  Menu
-      </button>
-      <span class="w3-bar-item w3-right">Logo</span>
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0">
+        <img src="{% static 'image/ps.jpg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">Pinesphere Solutions</span>
+      </a>
     </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href=" ">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <!--li class="nav-item">
+          <a class="nav-link " href=" ">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">View</span>
+          </a>
+        </li-->
+        <!--li class="nav-item">
+          <a class="nav-link " href="./view.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Overview</span>
+          </a>
+        </li-->
+        {% comment %} <li class="nav-item">
+          <a class="nav-link " href="{% url 'certificate' %}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">Certificate Templates</span>
+          </a>
+        </li> {% endcomment %}
+        <!--li class="nav-item">
+          <a class="nav-link " href="./cp.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
 
-    <!-- Sidebar/menu -->
-    <nav
-      class="w3-sidebar w3-collapse w3-white w3-animate-left"
-      style="z-index: 3; width: 300px"
-      id="mySidebar"
-    >
-      <br />
-      <div class="w3-container w3-row">
-        <div class="w3-col s4">
-          <img
-            src="C:\Users\Chara\OneDrive\Desktop\certificate-generation\frontpage\image\ps.jpg"
-            class="w3-circle w3-margin-right"
-            style="width: 46px"
-          />
-        </div>
-        <div class="w3-col s8 w3-bar">
-          <span>Welcome To <strong>Pinesphere Solutions</strong></span
-          ><br />
-          <!-- <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>-->
-        </div>
-      </div>
+            </div>
+            <span class="nav-link-text ms-1">Download Certificate</span>
+          </a>
+        </li-->
+         <li class="nav-item">
+          <a class="nav-link " href="{% url 'import_form' %}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1"> Upload Data</span>
+          </a>
+        </li>
 
-      <br /><br />
-      <div class="w3-bar-block">
-        <a class="w3-bar-item w3-button w3-padding w3-blue">Dashboard</a>
-        <br /><br />
-        <a
-          href="#"
-          class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
-          onclick="w3_close()"
-          title="close menu"
-          ><i class="fa fa-remove fa-fw"></i>  Close Menu</a
-        >
-        <a href="#" class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-users fa-fw"></i>  Overview</a
-        ><br /><br />
-        <a
-          href="C:\Users\Chara\OneDrive\Desktop\certificate-generation\template\view.html"
-          class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-eye fa-fw"></i> Views</a
-        ><br /><br />
-        <a href="#" class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-certificate fa-fw"></i>  Certificate Templates</a
-        ><br /><br />
-        <a
-          href="C:\Users\Chara\OneDrive\Desktop\certificate-generation\template\cp.html"
-          class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-bullseye fa-fw"></i>  Download Certificate</a
-        >
-        <!-- <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>-->
+		<li class="nav-item">
+          <a class="nav-link " href="{% url 'generate_list' %}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1">Pending Request</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+            </div>
+            <span class="nav-link-text ms-1"> Generated Certificate</span>
+          </a>
+        </li> 
+        
+      </ul>
+    </div>
+    </aside>
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+         <h6 class="font-weight-bolder text-white mb-0">Certificate Generator</h6>
+        
+       
+        </div>
       </div>
     </nav>
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div
-      class="w3-overlay w3-hide-large w3-animate-opacity"
-      onclick="w3_close()"
-      style="cursor: pointer"
-      title="close side menu"
-      id="myOverlay"
-    ></div>
-
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left: 300px; margin-top: 43px">
-      <!-- Header -->
-
-      <header class="w3-container" style="padding-top: 22px">
-        <h5>
-          <b><i class="fa fa-dashboard"></i> My Dashboard</b>
-        </h5>
-      </header>
-
-      <div class="w3-row-padding w3-margin-bottom">
-        <div class="w3-quarter">
-          <div class="w3-container w3-red w3-padding-16">
-            <div class="w3-left"><i class=""></i></div>
-            <div class="w3-right">
-              <h3>52</h3>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Downloads<br></p>
+                    <h5 class="font-weight-bolder">
+                      {{totalll}}
+                    </h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder"></span>
+                      since started
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w3-clear"></div>
-            <h4>C Programming</h4>
           </div>
         </div>
-        <div class="w3-quarter">
-          <div class="w3-container w3-blue w3-padding-16">
-            <div class="w3-left"><i class=""></i></div>
-            <div class="w3-right">
-              <h3>99</h3>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today Downloads</p>
+                    <h5 class="font-weight-bolder">
+                      17
+                    </h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder"></span>
+                      since today morning
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                    <i class="ni ni-paper-diploma	text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w3-clear"></div>
-            <h4>JAVA</h4>
           </div>
         </div>
-        <div class="w3-quarter">
-          <div class="w3-container w3-teal w3-padding-16">
-            <div class="w3-left"><i class=""></i></div>
-            <div class="w3-right">
-              <h3>23</h3>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">This Week</p>
+                    <h5 class="font-weight-bolder">
+                      40
+                    </h5>
+                    <p class="mb-0">
+                      <span class="text-danger text-sm font-weight-bolder"></span>
+                      since generated
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w3-clear"></div>
-            <h4>Python</h4>
           </div>
         </div>
-        <div class="w3-quarter">
-          <div class="w3-container w3-orange w3-text-white w3-padding-16">
-            <div class="w3-left"><i class=""></i></div>
-            <div class="w3-right">
-              <h3>50</h3>
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-8">
+                  <div class="numbers">
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Most Download</p>
+                    <h5 class="font-weight-bolder">
+                      102 
+                    </h5>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder">C</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4 text-end">
+                  <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="w3-clear"></div>
-            <h4>Web Development</h4>
           </div>
         </div>
       </div>
-
-      <div class="w3-panel">
-        <div class="w3-row-padding" style="margin: 0 -16px">
-          <div class="w3-third">
-            <h5>***</h5>
-            <br />
-            <img
-              src="C:\Users\Chara\OneDrive\Desktop\certificate-generation\dashboard\images\header\cg1.jpg"
-              style="width: 100%"
-              alt="Google Regional Map"
-            />
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card z-index-2 h-100">
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">Generated View</h6>
+              <p class="text-sm mb-0">
+                <i class=""></i>
+                <span class="font-weight-bold"></span>
+              </p>
+            </div>
+            <div class="card-body p-3">
+              <div class="chart">
+                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+              </div>
+            </div>
           </div>
-          <div class="w3-twothird">
-            <h5>RECENT FEEDS</h5>
-            <br /><br />
-            <table class="w3-table w3-striped w3-white">
-              <tr>
-                <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-                <td>New record, over 90 views.</td>
-                <td><i>10 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-                <td>Database error.</td>
-                <td><i>15 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-                <td>New record, over 40 users.</td>
-                <td><i>17 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-                <td>New comments.</td>
-                <td><i>25 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-                <td>Check transactions.</td>
-                <td><i>28 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-                <td>CPU overload.</td>
-                <td><i>35 mins</i></td>
-              </tr>
-              <tr>
-                <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-                <td>New shares.</td>
-                <td><i>39 mins</i></td>
-              </tr>
-            </table>
+        </div>
+        <div class="col-lg-5">
+          <div class="card card-carousel overflow-hidden h-100 p-0">
+            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-inner border-radius-lg h-100">
+                <div class="carousel-item h-100 active" style="background-image: url('{% static "image/carousel-1.jpg" %}');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                    </div>
+                    <h5 class="text-white mb-1">Get started with Pinesphere</h5>
+                    <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('{% static "image/carousel-2.jpg" %}');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                    </div>
+                    <h5 class="text-white mb-1">Faster way to get developed</h5>
+                    <p>That’s your skill. I’m not really specifically talented at anything except for the ability to learn.</p>
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('{% static "image/carousel-3.jpg" %}');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-trophy text-dark opacity-10"></i>
+                    </div>
+                    <h5 class="text-white mb-1">Share your talents by expose to the world</h5>
+                    <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <hr />
-      <!--<div class="w3-container">
-    <h5>General Stats</h5>
-    <p>New Visitors</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
-    </div>
-
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>-->
-
-      <!--  <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card ">
+            <div class="card-header pb-0 p-3">
+              <div class="d-flex justify-content-between">
+                <h6 class="mb-2">Recent Generated</h6>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center ">
+                <tbody>
+                  <tr>
+                    <td class="w-30">
+                      <div class="d-flex px-2 py-1 align-items-center">
+                        <div>
+                          
+                        </div>
+                        {%for item in list%}
+                        <div class="ms-4">
+                          <p class="text-xs font-weight-bold mb-0">Course:</p>
+                          <h6 class="text-sm mb-0">{{item.course}}</h6>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-center">
+                        <p class="text-xs font-weight-bold mb-0">Duration:</p>
+                        <h6 class="text-sm mb-0">{{item.duration}}</h6>
+                      </div>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <div class="col text-center">
+                        <p class="text-xs font-weight-bold mb-0">Name:</p>
+                        <h6 class="text-sm mb-0">{{item.name}}</h6>
+                      </div>
+                    </td>
+                  </tr>
+                  {%endfor%}
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-header pb-0 p-3">
+              <h6 class="mb-0">Categories Of Internships</h6>
+            </div>
+            <div class="card-body p-3">
+              <ul class="list-group">
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex align-items-center">
+                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                      <i class="ni ni-mobile-button text-white opacity-10"></i>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="mb-1 text-dark text-sm">C</h6>
+                      <span class="text-xs">From Beginner<span class="font-weight-bold"> To Good programmer</span></span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex align-items-center">
+                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                      <i class="ni ni-hat-3 text-white opacity-10"></i>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="mb-1 text-dark text-sm">C++</h6>
+                      <span class="text-xs">From Beginner<span class="font-weight-bold"> To Understand Basic Concepts</span></span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex align-items-center">
+                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                      <i class="ni ni-atom text-white opacity-10"></i>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="mb-1 text-dark text-sm">Java</h6>
+                      <span class="text-xs">Helps to Know<span class="font-weight-bold"> OOPS Concepts</span></span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
+                  <div class="d-flex align-items-center">
+                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                      <i class="ni ni-app text-white opacity-10"></i>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="mb-1 text-dark text-sm">Python</h6>
+                      <span class="text-xs font-weight-bold">As a Good Source To Learn</span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+				<li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                  <div class="d-flex align-items-center">
+                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
+                      <i class="ni ni-html5 text-white opacity-10"></i>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <h6 class="mb-1 text-dark text-sm">Web development</h6>
+                      <span class="text-xs">Front End <span class="font-weight-bold"> To Back end</span></span>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+                
+				
+				
+				
+				
+				
+				
+				
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer pt-3  ">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href=" " class="font-weight-bold" target="_blank">CG Team</a>
+                for a better web.
+              
+      </footer>
+  </main>
+  <div class="fixed-plugin">
+    <!--a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="fa fa-cog py-2"> </i>
+    </a-->
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3 ">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">Argon Configurator</h5>
+          <p>See our dashboard options.</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0 overflow-auto">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0">Sidebar Colors</h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+          </div>
+        </a>
+        <!-- Sidenav Type -->
+        <div class="mt-3">
+          <h6 class="mb-0">Sidenav Type</h6>
+          <p class="text-sm">Choose between 2 different sidenav types.</p>
+        </div>
+        <div class="d-flex">
+          <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+          <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
+        </div>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        <!-- Navbar Fixed -->
+        <div class="d-flex my-3">
+          <h6 class="mb-0">Navbar Fixed</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-sm-4">
+        <div class="mt-2 mb-5 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+          </div>
+        </div>
+        <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
+        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View documentation</a>
+        <div class="w-100 text-center">
+          <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
+          <h6 class="mt-3">Thank you for sharing!</h6>
+          <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  <hr>
+  <!--   Core JS Files   -->
+  <script src="{% static 'js/core/popper.min.js' %}"></script>
+  <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/plugins/perfect-scrollbar.min.js' %}"></script>
+  <script src="{% static 'js/plugins/smooth-scrollbar.min.js' %}"></script>
+  <script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+  <script>
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
 
-  <div class="w3-container">
-    <h5>Countries</h5>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-      <tr>
-        <td>United States</td>
-        <td>65%</td>
-      </tr>
-      <tr>
-        <td>UK</td>
-        <td>15.7%</td>
-      </tr>
-      <tr>
-        <td>Russia</td>
-        <td>5.6%</td>
-      </tr>
-      <tr>
-        <td>Spain</td>
-        <td>2.1%</td>
-      </tr>
-      <tr>
-        <td>India</td>
-        <td>1.9%</td>
-      </tr>
-      <tr>
-        <td>France</td>
-        <td>1.5%</td>
-      </tr>
-    </table><br>
-    <button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Recent Users</h5>
-    <ul class="w3-ul w3-card-4 w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Mike</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar5.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jill</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar6.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jane</span><br>
-      </li>
-    </ul>
-  </div>
-  <hr>
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
 
-  <div class="w3-container">
-    <h5>Recent Comments</h5>
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="/w3images/avatar3.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>John <span class="w3-opacity w3-medium">Sep 29, 2014, 9:12 PM</span></h4>
-        <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov"],
+        datasets: [{
+          label: "Certificate Count",
+          tension: 0.4,
+          borderWidth: 0,
+          pointRadius: 0,
+          borderColor: "#5e72e4",
+          backgroundColor: gradientStroke1,
+          borderWidth: 3,
+          fill: true,
+          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+          maxBarThickness: 6
 
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="w3-container w3-dark-grey w3-padding-32">
-    <div class="w3-row">
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
-        <p>Language</p>
-        <p>Country</p>
-        <p>City</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">System</h5>
-        <p>Browser</p>
-        <p>OS</p>
-        <p>More</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-orange">Target</h5>
-        <p>Users</p>
-        <p>Active</p>
-        <p>Geo</p>
-        <p>Interests</p>
-      </div>
-    </div>
-  </div>-->
-
-      <!-- Footer -->
-      <!--<footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>FOOTER</h4>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
-
-  <!-- End page content -->
-    </div>
-    -->
-
-    <script>
-      // Get the Sidebar
-      var mySidebar = document.getElementById("mySidebar");
-
-      // Get the DIV with overlay effect
-      var overlayBg = document.getElementById("myOverlay");
-
-      // Toggle between showing and hiding the sidebar, and add overlay effect
-      function w3_open() {
-        if (mySidebar.style.display === "block") {
-          mySidebar.style.display = "none";
-          overlayBg.style.display = "none";
-        } else {
-          mySidebar.style.display = "block";
-          overlayBg.style.display = "block";
-        }
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#fbfbfb',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
       }
-
-      // Close the sidebar with the close button
-      function w3_close() {
-        mySidebar.style.display = "none";
-        overlayBg.style.display = "none";
-      }
-    </script>
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
   </body>
+
 </html>
