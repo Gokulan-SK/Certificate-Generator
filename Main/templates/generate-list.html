@@ -19,11 +19,7 @@
     </video>
     <center>
       <caption style="font-weight: bold">
-
-        
-
         Student DataBase
-
       </caption>
     </center>
 
@@ -31,21 +27,6 @@
       <tr>
         <th>student Name</th>
         <th>Course Name</th>
-
-        <th>Duration</th>
-        <th>Mail ID</th>
-        <th></th>
-      </tr>
-      {%for item in list %}
-      <tr>
-        <td>{{item.name}}</td>
-        <td>{{item.course}}</td>
-        <td>{{item.duration}}</td>
-        <td>{{item.email}}</td>
-        <td><a href="{% url 'certificate' %}" class="button">Click To Generate</a></td>
-      </tr>
-      {%endfor%}
-
         <th>Start Date</th>
         <th>Duration</th>
         <th></th>
@@ -105,7 +86,6 @@
         <td>4 weeks</td>
         <td><a href="#" class="button">Click To Generate </a></td>
       </tr>
-
     </table>
   </body>
 </html>
