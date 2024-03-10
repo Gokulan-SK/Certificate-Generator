@@ -1,0 +1,78 @@
+body {
+    background: linear-gradient(to right, #ffffff, #3498db);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    /* Choose an appropriate text color for readability */
+}
+
+/* Button style */
+.download-button {
+    padding: 10px 20px;
+    background-color: #596cff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.download-button:hover {
+    background-color: navy;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.certificate {
+    text-align: center;
+}
+
+.certificate img {
+    max-width: 60%;
+    height: 50%;
+    border: 2px solid #000;
+}
+
+
+/* Image style */
+#certificateImage {
+    width: 100%;
+    max-width: 600px;
+    /* Adjust maximum width as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Center the image horizontally */
+    border: 2px solid #ccc;
+    /* Example border */
+    border-radius: 10px;
+    /* Example border radius */
+}
+
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.top-left-image {
+    position: absolute;
+    /* Set the position property to absolute */
+    top: 0;
+    /* Set the distance from the top edge to 0 */
+    left: 0;
+    /* Set the distance from the left edge to 0 */
+    height: 8%;
+    width: 4%;
+}

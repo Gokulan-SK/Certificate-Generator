@@ -2,30 +2,38 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <a href="{% url 'dashboard' %}"
-    ><img
-      class="top-left-image"
-      src="{% static 'image/ps.jpg' %}"
-      alt="Your Image"
-    />
-  </a>
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certificate</title>
-    <link rel="stylesheet" href="{% static 'css/certificate-template.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static '/css/certificate-template.css' %}"
+    />
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
   </head>
   <body>
-    <video autoplay loop muted plays-inline class="background-video">
-      <source src="{% static 'img/bgvideo.mp4' %}" type="video/mp4" />
-    </video>
+    <a href="{% url 'dashboard' %}"
+      ><img
+        class="top-left-image"
+        src="{% static '/image/ps.jpg' %}"
+        alt="Your Image"
+    /></a>
 
     <div class="certificate">
       <img
-        src="{% static 'image/certificate.jpg' %}"
+        id="certificateImage"
+        src="{% static 'certificates/' %}{{name}}_img.png"
         alt="Certificate of Achievement"
       />
+      <br /><br /><br /><br /><br />
+      <button class="download-button" onclick="downloadPDF()">Download</button>
     </div>
+
+    <script>
+      function downloadPDF() {}
+    </script>
   </body>
 </html>

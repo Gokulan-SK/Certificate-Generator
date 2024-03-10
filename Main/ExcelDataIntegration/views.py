@@ -14,7 +14,6 @@ def import_from_excel(request):
         for row in ws.iter_rows(min_row=2, values_only=True):
             name, course, duration, email = row
             IncompleteGeneration.objects.create(name=name, course=course, duration=duration, email=email)
+        return render(request, 'upload.html',{'success_message':'file uploaded successfully'})
 
-        return render(request, 'dashboard.html')
-
-    return render(request, 'import_form.html')
+    return render(request, 'upload.html')
