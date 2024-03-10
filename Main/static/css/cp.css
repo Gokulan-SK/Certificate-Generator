@@ -1,0 +1,169 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png");
+     background-repeat: no-repeat;
+        background-size: 1500px 800px;;
+  padding: 40px;
+}
+.container{
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px 60px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2500px;
+}
+.container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+ .container .cover .front,
+ .container .cover .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(245, 241, 248, 0.2); /* Use RGBA to set the opacity directly */
+  z-index: 12;
+}
+
+.container .cover::after{
+  opacity: 0.3;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.container .cover .text{
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cover .text .text-1,
+.cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .forms{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-content .login-form,
+.forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .input-boxes{
+  margin-top: 30px;
+}
+.forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-content .input-box i{
+  position: absolute;
+  color: blue;
+  font-size: 17px;
+}
+.forms .form-content .text a{
+  text-decoration: none;
+}
+.forms .form-content .button{
+  color: red;
+  margin-top: 40px;
+}
+.forms .form-content .button input {
+  display: inline-block; /* Set buttons to appear in a single line */
+  color: yellow;
+  background: blue;
+  border-radius: 10px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-right: 10px; /* Optional: Add margin between buttons */
+}
+
+.forms .form-content .button input:hover{
+  background: #98FB98;
+}
+.button-container {
+  display: inline-block; /* This makes the buttons stay in the same line */
+}
+.container #flip{
+  display: none;
+}
+
+
