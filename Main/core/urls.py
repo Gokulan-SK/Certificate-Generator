@@ -18,14 +18,17 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import handler404
+
+handler404 = 'users.views.custom_404_view'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('dashboard.urls')),
     path('',include('users.urls')),
     path('',include('ExcelDataIntegration.urls')),
-    # path('',include('generator')),
-    # path('',include('list.urls'))
+    path('',include('generator.urls')),
+    path('',include('list.urls'))
 
 ]
 

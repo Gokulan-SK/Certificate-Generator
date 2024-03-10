@@ -1,0 +1,66 @@
+{% load static %}
+
+<html>
+  <head>
+    <a href="{% url 'dashboard' %}"
+      ><img
+        class="top-left-image"
+        src="{% static 'image/ps.jpg' %}"
+        alt="Your Image"
+    /></a>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+    <link
+      href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/table.css' %}" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h4><center>Generated Certificates</center></h4>
+
+      <table id="myTable" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>uid</th>
+            <th>Student Name</th>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Email</th>
+            <th>Generated on</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for item in list %}
+          <tr>
+            <td>{{item.uid}}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.course }}</td>
+            <td>{{ item.duration }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{item.generation_time}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#myTable").dataTable();
+      });
+    </script>
+  </body>
+</html>

@@ -1,28 +1,28 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  {% load static %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{% static 'image/apple-icon.png' %}">
   <link rel="icon" type="image/png" href="{% static 'image/ps.jpg' %}">
-  <title>
-    Pinesphere solutions
-  </title>
+  <title> Pinesphere solutions</title>
   <!--     Fonts and icons     -->
   <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" /-->
   <!-- Nucleo Icons -->
   <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
-  <link href="{% static 'css/nucleo-svg.css'%}" rel="stylesheet" />
+  <link href="{% static 'css/nucleo-svg.css' %}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="{% static 'css/nucleo-svg.css' %}" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="{% static 'css/argon-dashboard.css' %}" rel="stylesheet" />
+  <style>
+    body {
+      font-family: cursive;
+    }
+  </style>
 </head>
-
 <body class="g-sidenav-show   bg-gray-100">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
   <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
@@ -45,14 +45,6 @@
           </a>
         </li>
         <!--li class="nav-item">
-          <a class="nav-link " href=" ">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">View</span>
-          </a>
-        </li-->
-        <!--li class="nav-item">
           <a class="nav-link " href="./view.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -60,46 +52,48 @@
             <span class="nav-link-text ms-1">Overview</span>
           </a>
         </li-->
-        <li class="nav-item">
-          <a class="nav-link " href="{% url 'certificate_template' %}">
+        <!--li class="nav-item">
+          <a class="nav-link " href="./ct.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-paper-diploma text-primary text-sm opacity-10" aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1">Certificate Templates</span>
           </a>
-        </li>
-        <!--li class="nav-item">
-          <a class="nav-link " href="./cp.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
-
-            </div>
-            <span class="nav-link-text ms-1">Download Certificate</span>
-          </a>
         </li-->
-        <li class="nav-item">
+		<li class="nav-item">
           <a class="nav-link " href="{% url 'import_form' %}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-map-big text-primary text-sm opacity-10"></i>
+
             </div>
-            <span class="nav-link-text ms-1"> Upload Data</span>
+            <span class="nav-link-text ms-1">Upload</span>
           </a>
         </li>
-
+        
+        
 		<li class="nav-item">
           <a class="nav-link " href="{% url 'generate_list' %}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-paper-diploma text-primary text-sm opacity-10" aria-hidden="true"></i>
             </div>
-            <span class="nav-link-text ms-1">Genearate Certficate</span>
+            <span class="nav-link-text ms-1">Genearate Certificate</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="{% url 'generated_list' %}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-paper-diploma text-info text-sm opacity-10" aria-hidden="true"></i>
+              <i class="ni ni-paper-diploma text-primary text-sm opacity-10" aria-hidden="true"></i>
             </div>
             <span class="nav-link-text ms-1"> Generated Certificate</span>
+          </a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link " href="{% url 'logout' %}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-user-run text-primary text-sm opacity-10" aria-hidden="true"></i>
+
+            </div>
+            <span class="nav-link-text ms-1">Log Out</span>
           </a>
         </li>
         
@@ -110,14 +104,46 @@
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
-         <h6 class="font-weight-bolder text-white mb-0">Certificate Generator</h6>
-        
-       
+         <h6 class="font-weight-bolder text-white mb-0">Certificate Generator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 &nbsp;&nbsp;&nbsp;&nbsp;DATE & TIME:&nbsp;&nbsp;<span id="datetime"></span></h6>
         </div>
-      </div>
+		<script>
+    // Function to update the date and time
+    function updateDateTime() {
+        // Get current date and time
+        var currentDateTime = new Date();
+        
+        // Format the date and time (you can customize the format as needed)
+        var formattedDateTime = currentDateTime.toLocaleString();
+        
+        // Update the content of the element with id "datetime"
+        document.getElementById("datetime").innerText = formattedDateTime;
+    }
+
+    // Call the function initially
+    updateDateTime();
+
+    // Update the date and time every second (1000 milliseconds)
+    setInterval(updateDateTime, 1000);
+</script>
+    
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
+	
+	<style>
+  .text-uppercase,
+  .font-weight-bold,
+  .font-weight-bolder,
+  .text-success,
+  .text-danger {
+    font-family: cursive;
+  }
+</style>
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
@@ -125,9 +151,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Downloads </p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Generations </p>
                     <h5 class="font-weight-bolder">
-                      420
+                      {{ total_generations }}
                     </h5>
                     <p class="mb-0">
                       <span class="text-success text-sm font-weight-bolder"></span>
@@ -150,9 +176,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Downloads</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Generations</p>
                     <h5 class="font-weight-bolder">
-                      17
+                      {{ todays_generations }}
                     </h5>
                     <p class="mb-0">
                       <span class="text-success text-sm font-weight-bolder"></span>
@@ -175,9 +201,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">This Week</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">This Week's Generations</p>
                     <h5 class="font-weight-bolder">
-                      40
+                      {{ this_weeks_generations }}
                     </h5>
                     <p class="mb-0">
                       <span class="text-danger text-sm font-weight-bolder"></span>
@@ -200,12 +226,12 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Most Downloaded</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Most<br>Generated</p>
                     <h5 class="font-weight-bolder">
-                      102 
+                      {{ most_popular_course_count }}
                     </h5>
                     <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">C</span>
+                      <span class="text-success text-sm font-weight-bolder">{{ most_popular_course_name }}</span>
                     </p>
                   </div>
                 </div>
@@ -219,6 +245,7 @@
           </div>
         </div>
       </div>
+	  </div>
       <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
@@ -295,11 +322,15 @@
               <table class="table align-items-center ">
                 <tbody>
                   <tr>
+				  <td class="align-middle text-sm">
+                      <div class="col text-center">
+                        <p class="text-xs font-weight-bold mb-0">Name:</p>
+                        <h6 class="text-sm mb-0">Gokulan</h6>
+                      </div>
+                    </td>
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          
-                        </div>
+              
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Course:</p>
                           <h6 class="text-sm mb-0">C</h6>
@@ -312,14 +343,16 @@
                         <h6 class="text-sm mb-0">15/02/2024</h6>
                       </div>
                     </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Name:</p>
-                        <h6 class="text-sm mb-0">Gokulan</h6>
-                      </div>
-                    </td>
+                    
                   </tr>
 				   <tr>
+				   
+				   <td class="align-middle text-sm">
+                      <div class="col text-center">
+                        <p class="text-xs font-weight-bold mb-0">Name:</p>
+                        <h6 class="text-sm mb-0">Dinesh</h6>
+                      </div>
+                    </td>
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
@@ -337,15 +370,16 @@
                         <h6 class="text-sm mb-0">14/02/2024</h6>
                       </div>
                     </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Name:</p>
-                        <h6 class="text-sm mb-0">Dinesh</h6>
-                      </div>
-                    </td>
+                    
                   </tr>
                  
 				  <tr>
+				   <td class="align-middle text-sm">
+                      <div class="col text-center">
+                        <p class="text-xs font-weight-bold mb-0">Name:</p>
+                        <h6 class="text-sm mb-0">Krupahari</h6>
+                      </div>
+                    </td>
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
@@ -363,15 +397,16 @@
                         <h6 class="text-sm mb-0">11/02/2024</h6>
                       </div>
                     </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Name:</p>
-                        <h6 class="text-sm mb-0">Charankumar</h6>
-                      </div>
-                    </td>
+                   
                   </tr>
                  
 				  <tr>
+				   <td class="align-middle text-sm">
+                      <div class="col text-center">
+                        <p class="text-xs font-weight-bold mb-0">Name:</p>
+                        <h6 class="text-sm mb-0">Vasu</h6>
+                      </div>
+                    </td>
                     <td class="w-30">
                       <div class="d-flex px-2 py-1 align-items-center">
                         <div>
@@ -379,24 +414,58 @@
                         </div>
                         <div class="ms-4">
                           <p class="text-xs font-weight-bold mb-0">Course:</p>
-                          <h6 class="text-sm mb-0">C++</h6>
+                          <h6 class="text-sm mb-0">Full Stack</h6>
                         </div>
                       </div>
                     </td>
                     <td>
                       <div class="text-center">
                         <p class="text-xs font-weight-bold mb-0">Date:</p>
-                        <h6 class="text-sm mb-0">10/02/2024</h6>
+                        <h6 class="text-sm mb-0">14/02/2024</h6>
                       </div>
                     </td>
-                    <td class="align-middle text-sm">
+                   
+                  </tr>
+                 
+			  
+			        <tr>
+                         <td class="align-middle text-sm">
                       <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Name:</p>
-                        <h6 class="text-sm mb-0">vasu</h6>
+                        <p class="text-xs font-weight-bold mb-0"></p>
+                        <h6 class="text-sm mb-0"></h6>
                       </div>
                     </td>
-                  </tr>				  
+                    <td class="w-30">
+                      <div class="d-flex px-2 py-1 align-items-center">
+                        <div>
+                          
+                        </div>
+                        <div class="ms-4">
+                          <p class="text-xs font-weight-bold mb-0"></p>
+                          <h6 class="text-sm mb-0"></h6>
+                        </div>
+                      </div>
+                    </td>
+					<td>
+					<div class="text-center">
+					<p class="text-xs font -weight-bold mb-0"></p>
+					<h6>
+                        <div class="ms-4">
+						
+<!-- Replace "next-page.html" with the actual URL of the next page -->
+<!--a href="C:/Users/Chara/Downloads/argon-dashboard-master/argon-dashboard-master/table.html"> <button id="moreButton" class="custom-button text-xs font-weight-bold mb-0" onclick="navigateToNextPage()">More...</button> </a-->
+<a href="{% url 'generated_list' %}" class="button">
+	 <span class="preview-text">More....</span><onclick="navigateToNextPage()">
+		</a>
+						
+						</h6>
+						  </div>
+                      </div>
+                    </td>
+                   </tr>	
+			  			  
                   </tbody>
+				  
               </table>
             </div>
           </div>
@@ -478,14 +547,6 @@
                     <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="" aria-hidden="true"></i></button>
                   </div>
                 </li>
-                
-				
-				
-				
-				
-				
-				
-				
               </ul>
             </div>
           </div>
@@ -495,84 +556,13 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
+                made with <i class="fa fa-heart"></i> by Pinesphere
                 <a href=" " class="font-weight-bold" target="_blank">CG Team</a>
-                for a better web.
+                for a better experience.
               
       </footer>
   </main>
-  <div class="fixed-plugin">
-    <!--a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a-->
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3 ">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">Argon Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i class="fa fa-close"></i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
-      </div>
-      <hr class="horizontal dark my-1">
-      <div class="card-body pt-sm-3 pt-0 overflow-auto">
-        <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
-        </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-        <!-- Sidenav Type -->
-        <div class="mt-3">
-          <h6 class="mb-0">Sidenav Type</h6>
-          <p class="text-sm">Choose between 2 different sidenav types.</p>
-        </div>
-        <div class="d-flex">
-          <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
-          <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
-        </div>
-        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        <!-- Navbar Fixed -->
-        <div class="d-flex my-3">
-          <h6 class="mb-0">Navbar Fixed</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
-          </div>
-        </div>
-        <hr class="horizontal dark my-sm-4">
-        <div class="mt-2 mb-5 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
-          </div>
-        </div>
-        <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
-        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View documentation</a>
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!--   Core JS Files   -->
   <script src="{% static 'js/core/popper.min.js' %}"></script>
   <script src="{% static 'js/core/bootstrap.min.js' %}"></script>
@@ -672,5 +662,4 @@
     }
   </script>
   </body>
-
 </html>

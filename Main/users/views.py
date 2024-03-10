@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import views as auth_views
 from django.contrib.auth import login,authenticate
+from django.contrib.auth import logout
 
 
 def home_page(request):
@@ -28,3 +29,10 @@ def login_page(request):
 
 
     return render(request,'authenticate\login.html',{})
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
+
+def custom_404_view(request, exception):
+    return render(request, 'error.html', status=404)
